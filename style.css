@@ -1,27 +1,104 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
-form {
-  max-width: 400px;
+
+body {
+  background: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+
+h1 {
+  color: #fff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+
+.formulario-cadastro {
+  background: #fff;
+  padding: 25px;
+  width: 340px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+
+.grupo-campos {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+
+.legenda {
+  font-weight: bold;
+  color: #667eea;
+  padding: 0 5px;
+}
+
 
 .campo-item {
-  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
 }
 
-label {
-  display: block;
-  margin-bottom: 3px;
+
+.rotulo {
+  font-size: 14px;
+  margin-bottom: 4px;
+  color: #444;
 }
 
-input {
+.entrada-texto {
+  padding: 9px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  transition: all 0.3s ease;
+}
+
+.entrada-texto:focus {
+  border-color: #667eea;
+  outline: 2px solid #667eea33;
+}
+
+.campo-item span {
+  font-size: 12px;
+  color: #777;
+  margin-top: 3px;
+}
+
+.botao-enviar {
   width: 100%;
-  padding: 5px;
+  padding: 11px;
+  border: none;
+  border-radius: 8px;
+  background: #667eea;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-button {
-  margin-top: 10px;
-  padding: 8px;
+.botao-enviar:hover {
+  background: #5a67d8;
+}
+
+.botao-enviar:focus {
+  outline: 3px solid #667eea55;
+}
+
+@media (max-width: 400px) {
+  .formulario-cadastro {
+    width: 90%;
+  }
 }
