@@ -4,35 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
- <h1>Cadastro de usuário</h1>
-  <form action="/enviar-cadastro" method="POST" class="formulario-cadastro">
 
-  <fieldset class="grupo-campos">
-    <legend class="legenda-grupo">Informações Pessoais</legend>
+<h1 id="formulario-de-cadastro">Cadastro de usuário</h1>
+
+<form action="/enviar-cadastro" method="POST" class="formulario-cadastro"  aria-labelledby="formulario-de-cadastro">
+
+  <fieldset class="grupo-campos" aria-labelledby="campos-do-formulario">
+    <legend id="campos-do-formulario" class="legenda"> Informações pessoais</legend>
 
     <div class="campo-item">
-      <label for="nome" class="rotulo">Nome Completo:</label>
-      <input type="text" id="nome" name="nome" class="entrada-texto" required>
+      <label for="nome" class="rotulo">Nome:</label>
+      <input  type="text" id="nome"  name="nome"  class="entrada-texto"  aria-required="true"  aria-describedby="campo-nome">
+      <span id="campo-nome">Campo para nome completo</span>
     </div>
 
     <div class="campo-item">
       <label for="email" class="rotulo">E-mail:</label>
-      <input type="email" id="email" name="email" class="entrada-texto" required>
+      <input type="email" id="email" name="email" class="entrada-texto" aria-required="true" aria-describedby="campo-email">
+      <span id="campo-email">Campo para e-mail</span>
     </div>
   </fieldset>
 
-  <fieldset class="grupo-campos">
-    <legend class="legenda-grupo">Segurança</legend>
+  <fieldset 
+    class="grupo-campos" 
+    aria-labelledby="campos-de-seguranca"
+  >
+    <legend id="campos-de-seguranca" class="legenda"> Segurança </legend>
     
     <div class="campo-item">
       <label for="senha" class="rotulo">Senha:</label>
-      <input type="password" id="senha" name="senha" class="entrada-texto" required minlength="8">
+      <input type="password"  id="senha"  name="senha"  class="entrada-texto"  aria-required="true"  aria-describedby="campo-senha">
+      <span id="campo-senha">Campo para senha</span>
     </div>
   </fieldset>
 
-  <button type="submit" class="botao-enviar">Finalizar Cadastro</button>
+  <button type="submit" class="botao-enviar" aria-label="Finalizar cadastro de usuário">Finalizar Cadastro </button>
+
 </form>
 
 </body>
