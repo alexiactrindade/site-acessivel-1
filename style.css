@@ -161,25 +161,48 @@ fieldset + fieldset {
   background: #1b5e20;
 }
 
-.botao-link {
-  display: inline-block;
-  margin-bottom: 20px;
-  padding: 12px 20px;
+.nav-vertical {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 100vh;
   background: #092c01;
-  color: #ffffff;
-  font-weight: bold;
+  padding-top: 20px;
+}
+
+.nav-vertical ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-vertical a {
+  display: block;
+  padding: 12px 20px;
+  color: white;
   text-decoration: none;
-  border-radius: 8px;
-  text-align: center;
-  cursor: pointer;
+  font-weight: bold;
 }
 
-.botao-link:hover,
-.botao-link:focus {
+.nav-vertical a:hover,
+.nav-vertical a:focus {
   background: #27500a;
-  outline: none;
 }
 
-.botao-link:focus {
-  box-shadow: 0 0 0 3px rgba(0, 121, 107, 0.4);
+.container {
+  margin-left: 240px; 
+  padding: 20px;
+  display: block; 
+}
+.tabela-acessivel {
+  width: 100%;
+  max-width: 700px; 
+  border-collapse: separate;
+  border-spacing: 2px;
+  background: #1b5e20;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 20px;
+  font-size: 14px; /* texto menor */
 }
