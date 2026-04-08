@@ -7,125 +7,113 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main>
-    <h1>Formulário de Cadastro</h1>
 
-    <form id="form-cadastro" novalidate>
+  <h1 id="titulo-form">Formulário de Cadastro</h1>
 
-      <fieldset>
-        <legend>Informações Pessoais</legend>
+  <form id="form" aria-labelledby="titulo-form" novalidate>
 
-        <p>
-          <label for="nome">Nome completo <span class="required">*</span></label>
-          <span id="descricao-nome" class="hint">Digite seu nome completo</span>
-          <input type="text" id="nome" name="nome" aria-required="true" aria-describedby="descricao-nome">
-          <div id="erro-nome" class="error" aria-live="polite"></div>
-        </p>
+    <fieldset aria-labelledby="legend-dados">
+      <legend id="legend-dados">Dados pessoais</legend>
 
-        <fieldset>
-          <legend>Gênero <span class="required">*</span></legend>
-          <label><input type="radio" name="genero" value="masculino"> Masculino</label>
-          <label><input type="radio" name="genero" value="feminino"> Feminino</label>
-          <label><input type="radio" name="genero" value="outro"> Outro</label>
-          <div id="erro-genero" class="error" aria-live="polite"></div>
-        </fieldset>
+      <label for="nome" id="label-nome">Nome completo *</label>
+      <input type="text" id="nome" name="nome" required
+             aria-labelledby="label-nome"
+             aria-required="true"
+             aria-describedby="erro-nome"
+             aria-label="Digite seu nome completo">
+      <span id="erro-nome" class="erro" role="alert" hidden>
+        Informe seu nome completo.
+      </span>
 
+      <fieldset aria-labelledby="legend-genero">
+        <legend id="legend-genero">Gênero *</legend>
+
+        <label>
+          <input type="radio" name="genero" value="masculino" required
+                 aria-required="true"
+                 aria-describedby="erro-genero"
+                 aria-label="Masculino">
+          Masculino
+        </label>
+
+        <label>
+          <input type="radio" name="genero" value="feminino"
+                 aria-label="Feminino">
+          Feminino
+        </label>
+
+        <label>
+          <input type="radio" name="genero" value="outro"
+                 aria-label="Outro">
+          Outro
+        </label>
+
+        <span id="erro-genero" class="erro" role="alert" hidden>
+          Selecione um gênero.
+        </span>
       </fieldset>
 
-      <fieldset>
-        <legend>Contato</legend>
+      <label for="email" id="label-email">E-mail *</label>
+      <input type="email" id="email" name="email" required
+             aria-labelledby="label-email"
+             aria-required="true"
+             aria-describedby="erro-email"
+             aria-label="Digite seu e-mail">
+      <span id="erro-email" class="erro" role="alert" hidden>
+        Informe um e-mail válido.
+      </span>
 
-        <p>
-          <label for="email">E-mail <span class="required">*</span></label>
-          <span id="descricao-email" class="hint">Digite seu e-mail</span>
-          <input type="email" id="email" name="email" aria-required="true" aria-describedby="descricao-email">
-          <div id="erro-email" class="error" aria-live="polite"></div>
-        </p>
+      <label for="telefone" id="label-telefone">Telefone</label>
+      <input type="tel" id="telefone" name="telefone"
+             aria-labelledby="label-telefone"
+             aria-label="Digite seu telefone">
 
-        <p>
-          <label for="telefone">Telefone</label>
-          <span id="descricao-telefone" class="hint">Digite seu telefone (opcional)</span>
-          <input type="tel" id="telefone" name="telefone" aria-describedby="descricao-telefone">
-          <div id="erro-telefone" class="error" aria-live="polite"></div>
-        </p>
+    </fieldset>
 
-      </fieldset>
+    <fieldset aria-labelledby="legend-endereco">
+      <legend id="legend-endereco">Endereço</legend>
 
-      <fieldset>
-        <legend>Endereço</legend>
+      <label for="cep" id="label-cep">CEP</label>
+      <input type="text" id="cep" name="cep"
+             aria-labelledby="label-cep"
+             aria-label="Digite seu CEP">
 
-        <p>
-          <label for="cep">CEP</label>
-          <span id="descricao-cep" class="hint">Digite o CEP (opcional)</span>
-          <input type="text" id="cep" name="cep" aria-describedby="descricao-cep">
-          <div id="erro-cep" class="error" aria-live="polite"></div>
-        </p>
+      <label for="rua" id="label-rua">Rua</label>
+      <input type="text" id="rua" name="rua"
+             aria-labelledby="label-rua"
+             aria-label="Digite sua rua">
 
-        <p>
-          <label for="rua">Rua</label>
-          <span id="descricao-rua" class="hint">Digite sua rua (opcional)</span>
-          <input type="text" id="rua" name="rua" aria-describedby="descricao-rua">
-          <div id="erro-rua" class="error" aria-live="polite"></div>
-        </p>
+      <label for="cidade" id="label-cidade">Cidade</label>
+      <input type="text" id="cidade" name="cidade"
+             aria-labelledby="label-cidade"
+             aria-label="Digite sua cidade">
 
-        <p>
-          <label for="cidade">Cidade</label>
-          <span id="descricao-cidade" class="hint">Digite sua cidade (opcional)</span>
-          <input type="text" id="cidade" name="cidade" aria-describedby="descricao-cidade">
-          <div id="erro-cidade" class="error" aria-live="polite"></div>
-        </p>
+      <label for="estado" id="label-estado">Estado *</label>
+      <select id="estado" name="estado" required
+              aria-labelledby="label-estado"
+              aria-required="true"
+              aria-describedby="erro-estado"
+              aria-label="Selecione seu estado">
+        <option value="">Selecione</option>
+        <option>AC</option><option>AL</option><option>AP</option><option>AM</option>
+        <option>BA</option><option>CE</option><option>DF</option><option>ES</option>
+        <option>GO</option><option>MA</option><option>MT</option><option>MS</option>
+        <option>MG</option><option>PA</option><option>PB</option><option>PR</option>
+        <option>PE</option><option>PI</option><option>RJ</option><option>RN</option>
+        <option>RS</option><option>RO</option><option>RR</option><option>SC</option>
+        <option>SP</option><option>SE</option><option>TO</option>
+      </select>
+      <span id="erro-estado" class="erro" role="alert" hidden>
+        Selecione um estado.
+      </span>
 
-        <p>
-          <label for="estado">Estado</label>
-          <span id="descricao-estado" class="hint">Selecione seu estado</span>
-          <select id="estado" name="estado" aria-describedby="descricao-estado">
-            <option value="">Selecione</option>
-            <option value="AC">Acre</option>
-            <option value="AL">Alagoas</option>
-            <option value="AP">Amapá</option>
-            <option value="AM">Amazonas</option>
-            <option value="BA">Bahia</option>
-            <option value="CE">Ceará</option>
-            <option value="DF">Distrito Federal</option>
-            <option value="ES">Espírito Santo</option>
-            <option value="GO">Goiás</option>
-            <option value="MA">Maranhão</option>
-            <option value="MT">Mato Grosso</option>
-            <option value="MS">Mato Grosso do Sul</option>
-            <option value="MG">Minas Gerais</option>
-            <option value="PA">Pará</option>
-            <option value="PB">Paraíba</option>
-            <option value="PR">Paraná</option>
-            <option value="PE">Pernambuco</option>
-            <option value="PI">Piauí</option>
-            <option value="RJ">Rio de Janeiro</option>
-            <option value="RN">Rio Grande do Norte</option>
-            <option value="RS">Rio Grande do Sul</option>
-            <option value="RO">Rondônia</option>
-            <option value="RR">Roraima</option>
-            <option value="SC">Santa Catarina</option>
-            <option value="SP">São Paulo</option>
-            <option value="SE">Sergipe</option>
-            <option value="TO">Tocantins</option>
-          </select>
-          <div id="erro-estado" class="error" aria-live="polite"></div>
-        </p>
+    </fieldset>
 
-      </fieldset>
+    <button type="submit">Finalizar cadastro</button>
 
-      <div class="checkbox-group">
-        <input type="checkbox" id="termos" name="termos" aria-required="true">
-        <label for="termos">Aceito os termos de uso <span class="required">*</span></label>
-        <div id="erro-termos" class="error" aria-live="polite"></div>
-      </div>
+    <p id="sucesso" role="status" aria-live="polite"></p>
 
-      <div class="actions">
-        <button type="submit">Finalizar cadastro</button>
-      </div>
-
-    </form>
-  </main>
-
+  </form>
   <script src="script.js"></script>
 </body>
 </html>

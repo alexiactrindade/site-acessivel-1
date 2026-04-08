@@ -1,111 +1,119 @@
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
   font-family: Arial, sans-serif;
-  background: #6ebc1a; 
+  background: #6ebc1a;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 20px;
   min-height: 100vh;
-  padding: 2vh 2vw;
 }
 
-/* TÍTULO */
 h1 {
-  text-align: center;
-  color: #ffffff;
-  margin-bottom: 3vh;
-  font-size: 10vh;
+  color: white;
+  font-size: 36px;
+  margin-bottom: 24px;
 }
-
 
 form {
-  background: #ffffff;
-  padding: 3vh 2vw;
-  width: 50vw; 
-  min-width: 30vw;
-  border-radius: 1vw;
-  box-shadow: 0 1vh 2vh rgba(0,0,0,0.1);
-  border: 0.2vh solid #b2dfdb;
-}
-
-fieldset {
-  margin-bottom: 2vh;
-  padding: 2vh 1vw 1vh 1vw;
-  border: 0.2vh solid #b2dfdb;
-  border-radius: 0.8vw;
-  background-color: #f1f8e9;
-}
-
-legend {
-  display: block;
-  font-weight: bold;
-  color: #00796b;
-  margin-bottom: 1.5vh;
-  padding: 0 0.5vw;
-  font-size: 2vh;
+  background: white;
+  padding: 32px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 label {
-  display: block;
-  margin-bottom: 0.5vh;
   font-weight: bold;
   color: #004d40;
-  font-size: 1.8vh;
+  margin-top: 10px;
 }
 
-span {
-  display: block;
-  font-size: 1.2vh;
-  color: #666;
-  margin-bottom: 0.5vh;
-}
-
-input,
-select,
-textarea {
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
   width: 100%;
-  padding: 1.2vh 1vw;
-  border: 0.2vh solid #b2dfdb;
-  border-radius: 0.5vw;
-  font-size: 1.7vh;
-  margin-bottom: 1.5vh;
-  transition: all 0.3s ease;
 }
 
 input:focus,
-select:focus,
-textarea:focus {
+select:focus {
   border-color: #00796b;
-  outline: 0.3vh solid #00796b33;
+  outline: none;
 }
 
-
-input[type="radio"],
-input[type="checkbox"] {
-  width: auto;
-  margin-right: 0.5vw;
+.radio-grupo {
+  display: flex;
+  gap: 20px;
 }
 
+.radio-grupo label {
+  font-weight: normal;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 0;
+}
+
+.erro {
+  color: red;
+  font-size: 13px;
+  display: none;
+}
+
+.erro.visivel {
+  display: block;
+}
 
 button {
-  width: 100%;
-  padding: 1.5vh 0;
+  margin-top: 20px;
+  padding: 12px;
   background: #092c01;
   color: white;
+  font-size: 16px;
   font-weight: bold;
   border: none;
-  border-radius: 0.8vw;
-  font-size: 2vh;
+  border-radius: 8px;
   cursor: pointer;
-  transition: 0.3s;
 }
 
 button:hover {
-  background: #99b882;
+  background: #27500a;
+}
+
+#sucesso {
+  display: none;
+  color: green;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* RESET VISUAL DOS FIELDSETS */
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* LEGEND COMO SE FOSSE LABEL DE SEÇÃO */
+legend {
+  font-weight: bold;
+  color: #004d40;
+  margin-top: 16px;
+  margin-bottom: 4px;
+}
+
+/* ESPAÇAMENTO ENTRE GRUPOS */
+fieldset + fieldset {
+  margin-top: 10px;
 }
